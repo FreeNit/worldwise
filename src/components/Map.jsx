@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   MapContainer,
@@ -11,13 +9,13 @@ import {
 } from "react-leaflet";
 
 import styles from "./Map.module.css";
-
+import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useUrlPosition } from "../hooks/useUrlPosition";
 import Button from "./Button";
 
-export default function Map() {
+function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {
@@ -49,9 +47,10 @@ export default function Map() {
           {isLoadingPosition ? "Loading..." : "Use your position"}
         </Button>
       )}
+
       <MapContainer
         center={mapPosition}
-        zoom={13}
+        zoom={6}
         scrollWheelZoom={true}
         className={styles.map}
       >
@@ -65,9 +64,7 @@ export default function Map() {
             key={city.id}
           >
             <Popup>
-              <span>
-                {city.emoji} <span>{city.cityName}</span>
-              </span>
+              <span>{city.emoji}</span> <span>{city.cityName}</span>
             </Popup>
           </Marker>
         ))}
@@ -92,3 +89,5 @@ function DetectClick() {
     click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
 }
+
+export default Map;
