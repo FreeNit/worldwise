@@ -1,3 +1,28 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "cityName": "Kyiv",
+      "country": "Ukraine",
+      "emoji": "🇺🇦",
+      "date": "2024-10-20T18:13:14.510Z",
+      "notes": "TEST",
+      "position": {
+        "lat": "50.387507803003146",
+        "lng": "30.520019531250004"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Uzhhorod",
+      "country": "Ukraine",
+      "emoji": "🇺🇦",
+      "date": "2024-10-20T18:13:54.270Z",
+      "notes": "TEST",
+      "position": {
+        "lat": "48.600225060468915",
+        "lng": "22.318725585937504"
+      },
+      "id": 2
+    }
+  ]
 }
