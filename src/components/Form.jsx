@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
+import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Form.module.css";
 
 import { useUrlPosition } from "../hooks/useUrlPosition";
@@ -13,7 +14,6 @@ import Button from "./Button";
 import BackButton from "./BackButton";
 import Message from "./Message";
 import Spinner from "./Spinner";
-import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
